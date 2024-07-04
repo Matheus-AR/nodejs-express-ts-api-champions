@@ -60,7 +60,7 @@ export const deleteOnePlayer = async (id: number) => {
     return false;
 };
 
-export const findAndModifyPlayer = async (id: number, statistics: StatisticsModel) => {
+export const findAndModifyPlayer = async (id: number, statistics: StatisticsModel): Promise<PlayerModel> => {
     const playerIndex = database.findIndex(player => player.id === id);
 
     if (playerIndex !== -1) {
